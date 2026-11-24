@@ -31,7 +31,7 @@ This repository documents a security assessment of a proposed **Student Login Po
 
 | Stage | What I did | Evidence |
 |---|---|---|
-| Model | Created DFD and labeled data flows / boundaries | [`threat-model`](git@github.com:olastica/threat_modelling_and_risk_assessment.git/threat-model/Student Web Portal.json) |
+| Model | Created DFD and labeled data flows / boundaries | [`screenshot`](threat-model/screeshot.png), [`model`](threat-model/student_web_portal.json), [`report`](threat-model/student_web_portal.pdf) |
 | Threats | Identified threats using STRIDE | Threat Dragon report in `threat-model/` |
 | Risk | Scored each threat and recorded justification | [`risk-assessment/`](risk-assessment/) |
 | Controls | Mapped mitigations to applicable controls | [`control-mapping/`](control-mapping/) |
