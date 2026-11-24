@@ -42,12 +42,12 @@ This repository documents a security assessment of a proposed **Student Login Po
 
 | ID | STRIDE category | Threat summary | Risk score | Proposed action |
 |---|---|---|---|---|
-| R-001 | Spoofing | [A threat actor uses stolen or phished credentials, or a hijacked session token, to impersonate a legitimate student.] | [20] | [Mitigate] |
-| R-004 | Tampering | [A threat actor injects malicious SQL through portal input fields to alter or delete student records in the database.] | [25] | [Mitigate] |
-| R-005 | Repudiation | [A threat actor forges or injects log entries to hide their actions, so activity cannot be traced to an account.] | [10] | [Mitigate] |
-| R-006 | Information Disclosure | [A threat actor intercepts traffic or exploits access flaws to read other students' personal data or password hashes.] | [15] | [Mitigate] |
-| R-007 | Denial of Service | [A threat actor floods the portal with requests, exhausting server or database resources and blocking legitimate students.] | [15] | [Mitigate] |
-| R-008 | Elevation of Priviledge | [An authenticated student or attacker exploits access-control or server flaws to gain administrator or root privileges.] | [15] | [Mitigate] |
+| R-001 | Spoofing | A threat actor uses stolen or phished credentials, or a hijacked session token, to impersonate a legitimate student. | 20 | Mitigate |
+| R-004 | Tampering | A threat actor injects malicious SQL through portal input fields to alter or delete student records in the database. | 25 | Mitigate |
+| R-005 | Repudiation | A threat actor forges or injects log entries to hide their actions, so activity cannot be traced to an account. | 10 | Mitigate |
+| R-006 | Information Disclosure | A threat actor intercepts traffic or exploits access flaws to read other students' personal data or password hashes. | 15 | Mitigate |
+| R-007 | Denial of Service | A threat actor floods the portal with requests, exhausting server or database resources and blocking legitimate students. | 15 | Mitigate |
+| R-008 | Elevation of Priviledge | An authenticated student or attacker exploits access-control or server flaws to gain administrator or root privileges. | 15 | Mitigate |
 
 **Risk scoring:** Likelihood (1–5) × Impact (1–5). Explain both ratings in the risk register. Scores are scenario judgments, not measured exploit probabilities.
 
