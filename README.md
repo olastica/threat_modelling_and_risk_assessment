@@ -1,8 +1,8 @@
 # Student Login Portal | Threat Modeling & Risk Assessment
 
-**Halisans Technologies **
-**Analyst:** Olasunkanmi Ogidan · 
-**Status:** Production security audit
+**Halisans Technologies**  
+**Analyst:** Olasunkanmi Ogidan  
+**Status:** Production Security Audit
 
 ## Executive summary
 
