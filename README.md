@@ -1,7 +1,7 @@
 # Student Login Portal | Threat Modeling & Risk Assessment
 
-**Halisans Technologies  
-**Analyst:** [Olasunkanmi Ogidan] · 
+**Halisans Technologies **
+**Analyst:** Olasunkanmi Ogidan · 
 **Status:** Production security audit
 
 ## Executive summary
@@ -31,7 +31,7 @@ This repository documents a security assessment of a proposed **Student Login Po
 
 | Stage | What I did | Evidence |
 |---|---|---|
-| Model | Created DFD and labeled data flows / boundaries | [`screenshot`](threat-models/screeshot.png), [`model`](threat-models/student_web_portal.json) |
+| Model | Created DFD and labeled data flows / boundaries | [`screenshot`](threat-models/screenshot.png), [`model`](threat-models/student_web_portal.json) |
 | Threats | Identified threats using STRIDE | Threat Dragon report in [`report`](threat-models/student_web_portal.pdf) |
 | Risk | Scored each threat and recorded justification | [`risk-assessment/`](risk-assessment/threat_risk_register.xlsx) |
 | Controls | Mapped mitigations to applicable controls | [`control-mapping/`](control-mapping/control-mapping-matrix.xlsx) |
@@ -42,18 +42,18 @@ This repository documents a security assessment of a proposed **Student Login Po
 
 | ID | STRIDE category | Threat summary | Risk score | Proposed action |
 |---|---|---|---|---|
-| R-001 | [Spoofing] | [A threat actor uses stolen or phished credentials, or a hijacked session token, to impersonate a legitimate student.] | [20] | [Mitigate] |
-| R-004 | [Tampering] | [A threat actor injects malicious SQL through portal input fields to alter or delete student records in the database.] | [25] | [Mitigate] |
-| R-005 | [Repudiation] | [A threat actor forges or injects log entries to hide their actions, so activity cannot be traced to an account.] | [10] | [Mitigate] |
-| R-006 | [Information Disclosure] | [A threat actor intercepts traffic or exploits access flaws to read other students' personal data or password hashes.] | [15] | [Mitigate] |
-| R-007 | [Denial of Service] | [A threat actor floods the portal with requests, exhausting server or database resources and blocking legitimate students.] | [15] | [Mitigate] |
-| R-008 | [Elevation of Priviledge] | [An authenticated student or attacker exploits access-control or server flaws to gain administrator or root privileges.] | [15] | [Mitigate] |
+| R-001 | Spoofing | [A threat actor uses stolen or phished credentials, or a hijacked session token, to impersonate a legitimate student.] | [20] | [Mitigate] |
+| R-004 | Tampering | [A threat actor injects malicious SQL through portal input fields to alter or delete student records in the database.] | [25] | [Mitigate] |
+| R-005 | Repudiation | [A threat actor forges or injects log entries to hide their actions, so activity cannot be traced to an account.] | [10] | [Mitigate] |
+| R-006 | Information Disclosure | [A threat actor intercepts traffic or exploits access flaws to read other students' personal data or password hashes.] | [15] | [Mitigate] |
+| R-007 | Denial of Service | [A threat actor floods the portal with requests, exhausting server or database resources and blocking legitimate students.] | [15] | [Mitigate] |
+| R-008 | Elevation of Priviledge | [An authenticated student or attacker exploits access-control or server flaws to gain administrator or root privileges.] | [15] | [Mitigate] |
 
 **Risk scoring:** Likelihood (1–5) × Impact (1–5). Explain both ratings in the risk register. Scores are scenario judgments, not measured exploit probabilities.
 
 ## Deliverables
 
-1. **OWASP Threat Dragon report and model** — add exported report PDF and model JSON to `threat-model/`.
+1. **OWASP Threat Dragon report and model** — add exported report PDF and model JSON to `threat-models/`.
 2. **Threat Risk Register** — complete `risk-assessment/threat_risk_register.xlsx`.
 3. **Control Mapping** — complete `control-mapping/control-mapping-matrix.xlsx` using verified control references.
 4. **Risk Treatment Plan** — complete `risk-treatment/risk_treatment_plan.xlsx`.
