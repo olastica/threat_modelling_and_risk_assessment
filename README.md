@@ -31,11 +31,12 @@ This repository documents a security assessment of a proposed **Student Login Po
 
 | Stage | What I did | Evidence |
 |---|---|---|
-| Model | Created DFD and labeled data flows / boundaries | [`screenshot`](threat-model/screeshot.png), [`model`](threat-model/student_web_portal.json), [`report`](threat-model/student_web_portal.pdf) |
-| Threats | Identified threats using STRIDE | Threat Dragon report in `threat-model/` |
-| Risk | Scored each threat and recorded justification | [`risk-assessment/`](risk-assessment/) |
-| Controls | Mapped mitigations to applicable controls | [`control-mapping/`](control-mapping/) |
-| Treatment | Assigned proposed actions, owners, and verification criteria | [`risk-treatment/`](risk-treatment/) |
+| Model | Created DFD and labeled data flows / boundaries | [`screenshot`](threat-models/screeshot.png), [`model`](threat-models/student_web_portal.json) |
+| Threats | Identified threats using STRIDE | Threat Dragon report in [`report`](threat-models/student_web_portal.pdf) |
+| Risk | Scored each threat and recorded justification | [`risk-assessment/`](risk-assessment/threat_risk_register.xlsx) |
+| Controls | Mapped mitigations to applicable controls | [`control-mapping/`](control-mapping/control-mapping-matrix.xlsx) |
+| Treatment | Assigned proposed actions, owners, and verification criteria | [`risk-treatment/`](risk-treatment/risk_treatment_plan.xlsx) |
+| Annex | [`annex a/`](annex/Annex_A_Risk_Scoring_Methodology.pdf), [`annex b/`](annex/Annex_B_Risk_Treatment_Methodology.pdf) |
 
 ## Findings summary
 
@@ -53,6 +54,6 @@ This repository documents a security assessment of a proposed **Student Login Po
 ## Deliverables
 
 1. **OWASP Threat Dragon report and model** — add exported report PDF and model JSON to `threat-model/`.
-2. **Threat Risk Register** — complete `risk-assessment/threat-risk-register.csv`.
-3. **Control Mapping** — complete `control-mapping/control-mapping.csv` using verified control references.
-4. **Risk Treatment Plan** — complete `risk-treatment/risk-treatment-plan.csv`.
+2. **Threat Risk Register** — complete `risk-assessment/threat_risk_register.xlsx`.
+3. **Control Mapping** — complete `control-mapping/control-mapping-matrix.xlsx` using verified control references.
+4. **Risk Treatment Plan** — complete `risk-treatment/risk_treatment_plan.xlsx`.
