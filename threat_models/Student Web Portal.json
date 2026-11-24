@@ -1,0 +1,1636 @@
+{
+  "version": "2.6.2",
+  "summary": {
+    "title": "Student Web Portal",
+    "owner": "Olasunkanmi Ogidan",
+    "description": "A Threat Model for a student web portal",
+    "id": 0
+  },
+  "detail": {
+    "contributors": [
+      {
+        "name": "Olasunkanmi Ogidan"
+      }
+    ],
+    "diagrams": [
+      {
+        "id": 0,
+        "title": "New STRIDE diagram",
+        "diagramType": "STRIDE",
+        "placeholder": "New STRIDE diagram description",
+        "thumbnail": "./public/content/images/thumbnail.stride.jpg",
+        "version": "2.6.2",
+        "cells": [
+          {
+            "position": {
+              "x": 327.9999999999985,
+              "y": 202.00000000000023
+            },
+            "size": {
+              "width": 340,
+              "height": 480
+            },
+            "attrs": {
+              "label": {
+                "text": "Application Trust Boundary"
+              }
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "zIndex": -1,
+            "id": "b6b32228-db8c-4b63-ae38-0e1d55b031a4",
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "Application Trust Boundary",
+              "description": "Separates the untrusted internet, where the student’s browser sits, from the web application server. All data crossing this boundary comes from users and must be treated as untrusted: it is sent over HTTPS, input is validated and sanitised, and every request except registration and login needs an authenticated session",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false,
+              "crossingFlows": [
+                "7b89ef85-b63c-4098-9016-f0319c1a18c5",
+                "eed0faa3-a445-4b61-b5fb-a38169579c19",
+                "0c98685f-4794-4fed-9fe5-36ca820e9e49",
+                "0f42dfbd-affa-4dd2-a868-2c435c865826",
+                "b640f37d-47f5-41a4-822c-8d41d474f2aa",
+                "3bfedb06-3fa6-477d-8b69-722cf10e8e72"
+              ],
+              "containedElements": [
+                "34c33999-6750-43ab-9595-7b8a3186f745",
+                "133a4b9f-a1e2-4201-9f38-2d9bbc5ac5ba",
+                "5c53c002-6c5a-43b2-86f4-b590831456e9"
+              ]
+            }
+          },
+          {
+            "position": {
+              "x": 727.9999999999991,
+              "y": 200.00000000000006
+            },
+            "size": {
+              "width": 280,
+              "height": 480
+            },
+            "attrs": {
+              "label": {
+                "text": "Database Trust Boundary"
+              }
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "zIndex": -1,
+            "id": "87a9452b-c2fe-48fb-9466-0dea6c927f60",
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "Database Trust Boundary",
+              "description": "Separates the web application from the database server holding student records and password hashes. Only the application can reach the database, using a least-privilege service account over an encrypted connection with parameterised queries. The database is not reachable directly from the internet",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false,
+              "crossingFlows": [
+                "0c98685f-4794-4fed-9fe5-36ca820e9e49",
+                "0f42dfbd-affa-4dd2-a868-2c435c865826",
+                "3bfedb06-3fa6-477d-8b69-722cf10e8e72"
+              ],
+              "containedElements": [
+                "2e591819-3e30-466a-a055-329065c65eec"
+              ]
+            }
+          },
+          {
+            "position": {
+              "x": 110,
+              "y": 415
+            },
+            "size": {
+              "width": 112.5,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Student"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "zIndex": 1,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "a1980b1c-9b8d-4e0b-9d61-eaac05e89571"
+                },
+                {
+                  "group": "right",
+                  "id": "ada8d4c6-3df9-43b1-9a5b-e5819f4041ed"
+                },
+                {
+                  "group": "bottom",
+                  "id": "f640e0d2-fa0e-4243-a836-561d44222ae0"
+                },
+                {
+                  "group": "left",
+                  "id": "1f97be0c-b411-4876-9606-38bb79371d64"
+                }
+              ]
+            },
+            "id": "6dc0558f-d9af-4929-8e94-5d9cb4746fc0",
+            "data": {
+              "type": "tm.Actor",
+              "name": "Student",
+              "description": "A registered or prospective student who uses the web portal from a browser over the internet. The student registers an account, logs in with their credentials, and views their own profile. The student is an external, untrusted entity outside the application trust boundary, so all input from them must be validated and authenticated",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "providesAuthentication": false,
+              "threats": [
+                {
+                  "id": "c97cf737-8796-4505-9229-db6de9be81df",
+                  "title": "R-001",
+                  "status": "Open",
+                  "severity": "Critical",
+                  "type": "Spoofing",
+                  "description": "An attacker pretends to be a legitimate student to get into the portal. They might use stolen, phished, guessed or reused credentials (credential stuffing or brute force), or hijack a valid session token sent over an untrusted network. Once logged in as that student, the attacker can view and change their personal and academic data",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 2,
+                  "score": "20"
+                },
+                {
+                  "id": "8fdbfeeb-96ef-4c4c-aaeb-0b066785f98e",
+                  "title": "R-002",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Repudiation",
+                  "description": "A student, or an attacker using a student’s account, denies having done something on the portal, such as submitting registration details, logging in, or changing profile data. If logging is missing, incomplete or can be forged, the institution can’t prove who did what and when. For example, an attacker could inject fake entries into the logs to cover their tracks",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 3,
+                  "score": "10"
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 3,
+                "repudiation": 3
+              }
+            }
+          },
+          {
+            "position": {
+              "x": 452,
+              "y": 230
+            },
+            "size": {
+              "width": 100,
+              "height": 110
+            },
+            "attrs": {
+              "text": {
+                "text": "Registration"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 2,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "3205fc19-4486-4bb5-8e63-92434f3d9eae"
+                },
+                {
+                  "group": "right",
+                  "id": "781a57be-b208-4ae6-bafd-acd61eefcfbf"
+                },
+                {
+                  "group": "bottom",
+                  "id": "87c357ae-561d-429f-b0c5-418c3a6c6856"
+                },
+                {
+                  "group": "left",
+                  "id": "336ed374-1c91-4f8c-8bb0-8e1a0a46a50d"
+                }
+              ]
+            },
+            "id": "34c33999-6750-43ab-9595-7b8a3186f745",
+            "data": {
+              "type": "tm.Process",
+              "name": "Registration",
+              "description": "Web application process that receives registration details (name, email, student ID, password) from a prospective student over HTTPS. It validates and sanitises the input, hashes the password, and creates a new student record in the database. Anyone can reach it without authentication, so it sits on the application trust boundary",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": true,
+              "privilegeLevel": "Unauthenticated (public)",
+              "threats": [
+                {
+                  "id": "648d76be-c10f-4476-84c8-8cf39dec7d91",
+                  "title": "R-003",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "An attacker registers using another person’s identity, such as a real student’s ID or email address, to create a fraudulent account or claim someone else’s record. A fake look-alike registration page could also impersonate the Registration process to collect students’ details and passwords. Both undermine trust in who is really behind each account",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 7,
+                  "score": "20"
+                },
+                {
+                  "id": "48de6099-a327-4aba-8a45-a26bb5698ecc",
+                  "title": "R-004",
+                  "status": "Open",
+                  "severity": "Critical",
+                  "type": "Tampering",
+                  "description": "An attacker changes registration data in transit or puts malicious input into the registration form, such as SQL injection or added hidden fields like role=admin. The aim is to alter or corrupt student records in the database. Registration is unauthenticated and writes straight to the database, so unvalidated input could change, delete or create records without permission",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 8,
+                  "score": "25"
+                },
+                {
+                  "id": "13d7b5ab-8692-48dc-a2b9-8eada0513088",
+                  "title": "R-005",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Repudiation",
+                  "description": "Someone who registered an account, legitimately or fraudulently, later denies creating it or denies the details they gave. If the Registration process doesn’t keep reliable, tamper-resistant records of each sign-up, the institution can’t prove when, how or from where an account was created. That makes fraud investigations, identity disputes and audits hard to settle. Attackers can also make it worse by injecting fake entries into registration logs through the form fields",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 9,
+                  "score": "10"
+                },
+                {
+                  "id": "93c0e4aa-1fbe-4b89-8a0a-4ed45a3dbb19",
+                  "title": "R-006",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "The Registration process leaks sensitive information to people who shouldn’t see it. For example:\n\n- Error messages show whether a student ID or email is already registered, which lets attackers find valid accounts.\n- Detailed error messages or stack traces reveal database structure.\n- Registration details, including passwords, are sent or stored in plain text.\n- Passwords or personal data end up in application logs.\n\nExposed data could be used for phishing, credential attacks or identity fraud, and could trigger GDPR breach obligations",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 10,
+                  "score": "15"
+                },
+                {
+                  "id": "c0aafa99-8028-4c0a-95b5-c19542a6ef6c",
+                  "title": "R-007",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Denial of service",
+                  "description": "An attacker floods the Registration process with requests to exhaust server, database or email resources and stop legitimate students from registering. Examples include automated mass sign-ups, oversized or malformed payloads, or protocol-level attacks like the HTTP/2 Rapid Reset (CVE-2023-44487). Bulk fake registrations can also fill the database and trigger large numbers of verification emails. This disrupts enrolment at critical times and harms the institution’s reputation",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 11,
+                  "score": "15"
+                },
+                {
+                  "id": "ee19a53c-97b3-4cf4-8143-a632f1cc4343",
+                  "title": "R-008",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Elevation of privilege",
+                  "description": "An attacker uses the Registration process to gain more privileges than a normal student should have. For example, they could add hidden parameters such as role=admin or isVerified=true (mass assignment), skip email verification to activate an account early, or use injection flaws to run commands with the application’s database or server permissions. Because Registration is unauthenticated, a successful attack could take an anonymous user straight to administrator access over all student records",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 12,
+                  "score": "15"
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 2,
+                "tampering": 3,
+                "repudiation": 3,
+                "informationDisclosure": 2,
+                "denialOfService": 2,
+                "elevationOfPrivilege": 2
+              }
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
+            }
+          },
+          {
+            "position": {
+              "x": 452,
+              "y": 390
+            },
+            "size": {
+              "width": 100,
+              "height": 110
+            },
+            "attrs": {
+              "text": {
+                "text": "Login"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 3,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "3205fc19-4486-4bb5-8e63-92434f3d9eae"
+                },
+                {
+                  "group": "right",
+                  "id": "781a57be-b208-4ae6-bafd-acd61eefcfbf"
+                },
+                {
+                  "group": "bottom",
+                  "id": "87c357ae-561d-429f-b0c5-418c3a6c6856"
+                },
+                {
+                  "group": "left",
+                  "id": "336ed374-1c91-4f8c-8bb0-8e1a0a46a50d"
+                }
+              ]
+            },
+            "id": "133a4b9f-a1e2-4201-9f38-2d9bbc5ac5ba",
+            "data": {
+              "type": "tm.Process",
+              "name": "Login",
+              "description": "Web application process that receives student credentials over HTTPS and looks up the matching account in the database. It checks the password against the stored hash and, if it matches, issues a secure session token. It enforces rate limiting and account lockout, and logs every authentication attempt",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": true,
+              "privilegeLevel": "Unauthenticated (public)",
+              "threats": [
+                {
+                  "id": "c3dd07fd-8f9d-40ae-b1ce-7c6f0d9b9a2a",
+                  "title": "R-009",
+                  "status": "Open",
+                  "severity": "Critical",
+                  "type": "Spoofing",
+                  "description": "An attacker logs in as a legitimate student using stolen, phished, guessed or reused credentials, through brute force or credential stuffing. They could also hijack or replay a valid session token. A fake look-alike login page could impersonate the Login process itself to collect students’ credentials. Once authenticated as the victim, the attacker can view and change that student’s personal and academic data",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 13,
+                  "score": "20"
+                },
+                {
+                  "id": "23dfae2e-f9e5-440a-a798-f1e94d6bd156",
+                  "title": "R-010",
+                  "status": "Open",
+                  "severity": "Critical",
+                  "type": "Tampering",
+                  "description": "An attacker changes login requests or responses, or the authentication logic itself, to get around the credential check or alter account data. Examples include SQL injection in the username field (e.g. ' OR '1'='1) to log in without a valid password, altering the authentication result or session token in transit, or changing client-side values such as a loggedIn=true cookie or a user ID parameter. A successful attack could grant unauthorised access or corrupt the credentials data in the database",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 14,
+                  "score": "25"
+                },
+                {
+                  "id": "e8d67ea8-341c-4a46-9f24-231b8ec8b328",
+                  "title": "R-011",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Repudiation",
+                  "description": "A student, or an attacker using a student’s credentials, denies having logged in or denies actions taken during that session. If the Login process doesn’t keep complete, reliable records of authentication events, the institution can’t prove who logged in, when, from where, or whether access was legitimate. Attackers can also cover their tracks by injecting fake entries into login logs through crafted usernames (as in CVE-2022-32549, a log injection flaw). This weakens incident investigations, account-misuse disputes and audit compliance",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 15,
+                  "score": "10"
+                },
+                {
+                  "id": "ff83b072-3185-4282-8ea1-f6b463023bcc",
+                  "title": "R-012",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "The Login process leaks sensitive information to people who shouldn’t see it. For example:\n\n- Messages like “user not found” or “wrong password” let attackers work out which accounts exist.\n- Differences in response time reveal valid usernames.\n- Detailed error messages or stack traces reveal system internals.\n- Credentials or session tokens are exposed in URLs, logs or unencrypted traffic.",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 16,
+                  "score": "15"
+                },
+                {
+                  "id": "21f4a6c7-6d2e-4508-8c23-0b056b4bcbce",
+                  "title": "R-013",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Denial of service",
+                  "description": "An attacker makes the Login process unavailable to legitimate students. They could flood it with authentication requests, use expensive password-hash checks to exhaust CPU, or exploit protocol-level flaws such as HTTP/2 Rapid Reset (CVE-2023-44487). They could also deliberately trigger account lockouts by sending repeated failed logins for real student IDs. Students would be shut out of the portal, disrupting access to records, coursework and registration deadlines, and support costs would rise",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 17,
+                  "score": "15"
+                },
+                {
+                  "id": "cf5e8986-2e6b-4fd7-807a-a63fb8f51e39",
+                  "title": "R-014",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Elevation of privilege",
+                  "description": "An attacker exploits flaws in the Login process to gain more privileges than they should have. Examples include:\n\n- Bypassing authentication with SQL injection.\n- Changing role or user ID values in the session token or cookie, such as a JWT with \"role\":\"admin\" or alg:none.\n- Session fixation that takes over a privileged user’s session.\n- Exploiting weaknesses in the underlying server to get root access (e.g. CVE-2021-3156, a sudo privilege escalation flaw).",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 18,
+                  "score": "15"
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 2,
+                "tampering": 2,
+                "repudiation": 2,
+                "informationDisclosure": 2,
+                "denialOfService": 2,
+                "elevationOfPrivilege": 2
+              }
+            }
+          },
+          {
+            "position": {
+              "x": 452,
+              "y": 540
+            },
+            "size": {
+              "width": 100,
+              "height": 110
+            },
+            "attrs": {
+              "text": {
+                "text": "View\nProfile"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 4,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "3205fc19-4486-4bb5-8e63-92434f3d9eae"
+                },
+                {
+                  "group": "right",
+                  "id": "781a57be-b208-4ae6-bafd-acd61eefcfbf"
+                },
+                {
+                  "group": "bottom",
+                  "id": "87c357ae-561d-429f-b0c5-418c3a6c6856"
+                },
+                {
+                  "group": "left",
+                  "id": "336ed374-1c91-4f8c-8bb0-8e1a0a46a50d"
+                }
+              ]
+            },
+            "id": "5c53c002-6c5a-43b2-86f4-b590831456e9",
+            "data": {
+              "type": "tm.Process",
+              "name": "View\nProfile",
+              "description": "Web application process that takes an authenticated student’s profile request, checks their session token, and gets back only that student’s own record from the database. It returns the profile details (name, email, student ID, course information) to the student over HTTPS",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": true,
+              "privilegeLevel": "Unauthenticated (public)",
+              "threats": [
+                {
+                  "id": "a66cee80-a35a-47ab-a27a-3bf816a1d943",
+                  "title": "R-015",
+                  "status": "Open",
+                  "severity": "Critical",
+                  "type": "Spoofing",
+                  "description": "An attacker gets into the View Profile process as a legitimate student by using a stolen, hijacked or replayed session token (through XSS, an insecure network or a token left in a URL). They could also change the student ID in the request (e.g. /profile?id=12345) to pose as another student. A fake look-alike profile page could impersonate the process to collect students’ data or session tokens. Either way, the attacker can view another student’s personal and academic details",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 20,
+                  "score": "20"
+                },
+                {
+                  "id": "bdd3e020-3647-494a-9c9a-882599514616",
+                  "title": "R-016",
+                  "status": "Open",
+                  "severity": "Critical",
+                  "type": "Tampering",
+                  "description": "An attacker changes profile requests, responses or the underlying data to alter what View Profile shows or stores. Examples include:\n\nChanging the student ID parameter to read or update another student’s record (IDOR).\nInjecting SQL through profile query parameters.\nStoring malicious scripts in profile fields (stored XSS) that run when the profile is viewed.\nChanging profile data in transit.\n\nA successful attack could corrupt student records, change contact details for account takeover, or compromise other users’ sessions",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 21,
+                  "score": "25"
+                },
+                {
+                  "id": "7ed6d71b-e3b6-45de-9c97-50caac6055dc",
+                  "title": "R-017",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Repudiation",
+                  "description": "A student, or an attacker using a student’s session, denies viewing or changing profile data. Examples are a student denying they changed their email or contact details, or someone denying they accessed another student’s record. If View Profile doesn’t keep complete, reliable logs of who accessed or changed which record and when, the institution can’t settle the dispute, investigate misuse, or show GDPR accountability for access to personal data. Attackers can also inject fake log entries through profile fields to cover their tracks (as in CVE-2022-32549)",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 22,
+                  "score": "10"
+                },
+                {
+                  "id": "1a7b56bd-e27d-48ed-943d-49d61a6ff35e",
+                  "title": "R-018",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "The View Profile process exposes student personal data to people who shouldn’t see it. Examples include:\n\n- Changing the student ID in the request to view another student’s profile (IDOR).\n- API responses that return more fields than needed, such as password hashes or internal IDs.\n- Detailed error messages that reveal database structure.\n- Profile pages cached by shared browsers or proxies.\n- Data intercepted in transit through weak TLS, such as Heartbleed (CVE-2014-0160).\n\nExposed names, emails, student IDs and course details could lead to phishing, identity fraud, ICO breach notification and reputational damage",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 23,
+                  "score": "15"
+                },
+                {
+                  "id": "21b6807a-9f12-4f67-8b1c-854283c28fab",
+                  "title": "R-019",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Denial of service",
+                  "description": "An attacker makes the View Profile process unavailable to legitimate students. Examples include:\n\n- Flooding it with profile requests, from logged-in sessions or automated scripts.\n- Sending heavy or malformed queries that overload the database.\n- Uploading oversized data into profile fields.\n- Exploiting protocol-level flaws such as HTTP/2 Rapid Reset (CVE-2023-44487).\n\nStudents would be unable to see their personal and course information, which disrupts their studies, increases support requests and damages the institution’s reputation",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 24,
+                  "score": "15"
+                },
+                {
+                  "id": "ce738535-0523-4696-839b-736b34517d80",
+                  "title": "R-020",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Elevation of privilege",
+                  "description": "An authenticated student exploits flaws in the View Profile process to gain more privileges than a standard student should have. Examples include:\n\n- Changing the student ID or role parameters to access or edit other students’ records (horizontal escalation).\n- Reaching admin-only profile functions by changing URLs or request fields (vertical escalation).\n- Mass assignment, for example adding role=admin to a profile update.\n- Using injection flaws, or local OS weaknesses such as CVE-2021-3156 (sudo), to get root on the application server.\n\nA successful attack could give a student administrator control over all student records and the system",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 25,
+                  "score": "15"
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 2,
+                "tampering": 2,
+                "repudiation": 2,
+                "informationDisclosure": 3,
+                "denialOfService": 2,
+                "elevationOfPrivilege": 2
+              }
+            }
+          },
+          {
+            "position": {
+              "x": 807.9999999999991,
+              "y": 412.0000000000002
+            },
+            "size": {
+              "width": 120,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Database"
+              },
+              "topLine": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              },
+              "bottomLine": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "store",
+            "zIndex": 5,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "36060c8b-b659-4864-b7bb-16cdf8cb2d5d"
+                },
+                {
+                  "group": "right",
+                  "id": "471c7a0c-d50e-4578-bd49-17a831f57af9"
+                },
+                {
+                  "group": "bottom",
+                  "id": "e95da16c-8735-4e60-a620-8ed85f10b779"
+                },
+                {
+                  "group": "left",
+                  "id": "b031acd5-8a07-41c5-8658-c657ae39f66c"
+                }
+              ]
+            },
+            "id": "2e591819-3e30-466a-a055-329065c65eec",
+            "data": {
+              "type": "tm.Store",
+              "name": "Database",
+              "description": "Relational database that holds student records: name, email, student ID, course information, and salted password hashes (bcrypt or Argon2). Only the Registration, Login and View Profile processes can reach it, through a least-privilege service account over an encrypted (TLS) connection using parameterised queries. It sits behind the database trust boundary and can’t be reached directly from the internet. Data is encrypted at rest and backed up regularly",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isALog": false,
+              "isEncrypted": true,
+              "isSigned": false,
+              "storesCredentials": true,
+              "storesInventory": false,
+              "threats": [
+                {
+                  "id": "7a310c63-4433-4b05-b9c5-68c1aeaf9b24",
+                  "title": "R-021",
+                  "status": "Open",
+                  "severity": "Critical",
+                  "type": "Tampering",
+                  "description": "An attacker changes or deletes data held in the Student Database without permission. Routes include SQL injection through the Registration, Login or View Profile processes (as in CVE-2023-34362, the MOVEit SQL injection flaw), direct access using stolen or over-privileged database credentials, a misconfigured database exposed to the network, or changes to backups. Altered or deleted student records, password hashes or course data would leave records unreliable, could allow account takeover, and would mean costly recovery, regulatory penalties and reputational damage",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 26,
+                  "score": "25"
+                },
+                {
+                  "id": "9157619b-74b1-4dc1-90b5-0bb7dbd9191c",
+                  "title": "R-022",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Repudiation",
+                  "description": "Someone who changed, deleted or read data in the Student Database, whether an application process, a database administrator or an attacker using stolen database credentials, later denies doing so. If the database doesn’t keep complete, tamper-resistant audit records of who changed what and when, unauthorised changes or accesses can’t be traced to a specific account. That weakens incident investigations, makes it hard to prove what happened in a breach, and undermines GDPR accountability. Shared database accounts and audit logs that privileged users can edit or delete make the problem worse",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 27,
+                  "score": "10"
+                },
+                {
+                  "id": "bd22eb2b-bc9b-43bc-a6cd-72ecfec4f8d3",
+                  "title": "R-023",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "Data in the Student Database is exposed to people who shouldn’t see it. Routes include:\n\n- SQL injection through the application processes.\n- A database exposed to the network or using default credentials.\n- Stolen or over-privileged service account credentials.\n- Unencrypted connections between the application and the database.\n- Unencrypted backups or database files.\n- Insiders with excessive access.\n\nLeaked names, emails, student IDs, course details and password hashes could lead to offline password cracking, phishing, identity fraud, ICO breach notification and fines under UK GDPR, and serious reputational damage",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 28,
+                  "score": "15"
+                },
+                {
+                  "id": "408681b0-70e4-4093-ac00-ddbfc45afd4a",
+                  "title": "R-024",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Denial of service",
+                  "description": "An attacker makes the Student Database unavailable or unresponsive, so Registration, Login and View Profile all stop working. Examples include:\n\n- Flooding the application with requests that each run database queries.\n- Sending expensive or malicious queries through injection flaws.\n- Using up connection pools, storage or CPU, for example with mass fake registrations.\n- Deleting or corrupting data, including ransomware that encrypts the database.\n- Attacking a database port that’s exposed to the network.\n\nBecause every process depends on the database, an outage would lock all students out of the portal, disrupt enrolment and studies, and could mean long recovery times",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 29,
+                  "score": "15"
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 2,
+                "repudiation": 2,
+                "informationDisclosure": 2,
+                "denialOfService": 2
+              }
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Profile Request / Profile Data",
+              "description": "Authenticated student requests their profile using their session token. View Profile returns the student’s personal details (name, email, student ID, course information)",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": true,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "TLS/HTTPS",
+              "threats": [
+                {
+                  "id": "3448b70f-4925-49b1-a1fc-9bae61dbd3da",
+                  "title": "R-037",
+                  "status": "Open",
+                  "severity": "Critical",
+                  "type": "Tampering",
+                  "description": "An attacker intercepts and changes data in either direction between the student and the View Profile process. Outbound, they could change the student ID in the profile request (IDOR) to target another student’s record, or inject malicious payloads such as SQL injection or stored XSS. Inbound, a man-in-the-middle could alter the profile data returned to the student, for example inserting false details or malicious scripts. This could expose or corrupt student records and compromise the student’s session",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 42,
+                  "score": "25"
+                },
+                {
+                  "id": "3e396d9c-22fc-4102-aeef-15f515652dc8",
+                  "title": "R-038",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "The session token in the request, or the personal data in the response (name, email, student ID, course information), is intercepted or leaked. This could happen through weak or unencrypted connections, TLS flaws such as Heartbleed (CVE-2014-0160), profile pages cached in shared browsers or proxies, tokens or student IDs in URLs and referrer headers, or responses returning more fields than needed. Exposed data could enable identity fraud, phishing and session hijacking, and trigger GDPR breach obligations",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 43,
+                  "score": "15"
+                },
+                {
+                  "id": "2370dfd1-760e-4ba3-a78e-70b4e3c79310",
+                  "title": "R-039",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Denial of service",
+                  "description": "The flow between students and the View Profile process is flooded or disrupted so legitimate students can’t see their profiles. Examples include high-volume request floods from scripts or hijacked sessions, slow-request attacks (Slowloris), oversized payloads, or HTTP/2 Rapid Reset (CVE-2023-44487). Students would lose access to their personal and course information, disrupting their studies and increasing support requests",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 44,
+                  "score": "15"
+                }
+              ],
+              "trustBoundaryIds": [
+                "b6b32228-db8c-4b63-ae38-0e1d55b031a4"
+              ],
+              "threatFrequency": {
+                "tampering": 4,
+                "informationDisclosure": 3,
+                "denialOfService": 3
+              }
+            },
+            "labels": [
+              "Profile Request / Profile Data"
+            ],
+            "id": "7b89ef85-b63c-4098-9016-f0319c1a18c5",
+            "source": {
+              "cell": "6dc0558f-d9af-4929-8e94-5d9cb4746fc0",
+              "port": "ada8d4c6-3df9-43b1-9a5b-e5819f4041ed"
+            },
+            "target": {
+              "cell": "5c53c002-6c5a-43b2-86f4-b590831456e9",
+              "port": "336ed374-1c91-4f8c-8bb0-8e1a0a46a50d"
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Registration Details",
+              "description": "Student submits name, email address, student ID and chosen password via the registration form over HTTPS",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "TLS/HTTPS",
+              "threats": [
+                {
+                  "id": "dfda49ba-3e91-423d-8548-73bcfb2dfdcc",
+                  "title": "R-025",
+                  "status": "Open",
+                  "severity": "Critical",
+                  "type": "Tampering",
+                  "description": "An attacker intercepts and changes registration data in transit between the student’s browser and the Registration process, for example through a man-in-the-middle attack on public Wi-Fi, a downgrade to HTTP, or a malicious proxy. They could change the submitted student ID, email or password, or insert malicious payloads, so the stored account differs from what the student entered. That could create accounts controlled by the attacker or corrupt student records",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 30,
+                  "score": "25"
+                },
+                {
+                  "id": "2179b437-8a22-4b55-8e51-e342c6715c90",
+                  "title": "R-026",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "Registration data, including the student’s name, email, student ID and plain-text password, is intercepted in transit. This could happen through an unencrypted connection, weak TLS configuration, or flaws such as Heartbleed (CVE-2014-0160). Data could also leak through being placed in URLs, browser history, proxy logs or referrer headers. Exposed credentials and personal data could lead to account takeover, identity fraud and GDPR breach obligations",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 31,
+                  "score": "15"
+                },
+                {
+                  "id": "54e2fb7d-1136-4b39-bfe6-0a996188e532",
+                  "title": "R-027",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Denial of service",
+                  "description": "An attacker disrupts or floods the flow between students and the Registration process so legitimate registration requests can’t get through. Examples include high-volume HTTP floods, slow-request attacks (Slowloris), oversized payloads, or protocol flaws such as HTTP/2 Rapid Reset (CVE-2023-44487). Students would be unable to register, which disrupts enrolment at peak times",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 32,
+                  "score": "15"
+                }
+              ],
+              "trustBoundaryIds": [
+                "b6b32228-db8c-4b63-ae38-0e1d55b031a4"
+              ],
+              "threatFrequency": {
+                "tampering": 2,
+                "informationDisclosure": 2,
+                "denialOfService": 2
+              }
+            },
+            "labels": [
+              "Registration Details"
+            ],
+            "id": "eed0faa3-a445-4b61-b5fb-a38169579c19",
+            "source": {
+              "cell": "6dc0558f-d9af-4929-8e94-5d9cb4746fc0",
+              "port": "ada8d4c6-3df9-43b1-9a5b-e5819f4041ed"
+            },
+            "target": {
+              "cell": "34c33999-6750-43ab-9595-7b8a3186f745",
+              "port": "336ed374-1c91-4f8c-8bb0-8e1a0a46a50d"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "New Student Record",
+              "description": "Registration process validates the input and stores the new student record, including a salted hash of the password, in the database",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": false,
+              "protocol": "TLS/SQL",
+              "threats": [
+                {
+                  "id": "05e23ec2-00a2-4768-b924-d55e8cd75176",
+                  "title": "R-028",
+                  "status": "Open",
+                  "severity": "Critical",
+                  "type": "Tampering",
+                  "description": "An attacker changes the new student record as it travels from the Registration process to the database. Routes include:\n\n- SQL injection carried through from the registration form (as in CVE-2023-34362).\n- A man-in-the-middle attack on an unencrypted connection between the application and the database inside the internal network.\n- A compromised application server rewriting queries.\n\nCorrupted or attacker-controlled records could set wrong roles or details, plant malicious content, or create fraudulent accounts.",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 33,
+                  "score": "25"
+                },
+                {
+                  "id": "a3325bc2-7974-4183-a3c0-5f4ee8566fe8",
+                  "title": "R-029",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "The new student record, including personal details and the password hash, is intercepted or exposed as it passes from the application to the database. Examples include sniffing an unencrypted internal connection, database connection strings or credentials leaking through config files or errors, or verbose query logs that capture the full record. Exposed hashes could be cracked offline, and leaked personal data creates GDPR breach obligations",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 34,
+                  "score": "15"
+                },
+                {
+                  "id": "e78c1271-ac4c-43a0-88bb-996e880a2e4e",
+                  "title": "R-030",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Denial of service",
+                  "description": "The connection between the Registration process and the database is overloaded or broken, so new records can’t be written. Examples include floods of fake registrations exhausting database connections, long-running or locking queries, network disruption between the application and database tiers, or the database refusing connections when it hits its limits. Registrations would fail and the outage could spread to Login and View Profile, which share the same database",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 35,
+                  "score": "15"
+                }
+              ],
+              "trustBoundaryIds": [
+                "b6b32228-db8c-4b63-ae38-0e1d55b031a4",
+                "87a9452b-c2fe-48fb-9466-0dea6c927f60"
+              ],
+              "threatFrequency": {
+                "tampering": 2,
+                "informationDisclosure": 3,
+                "denialOfService": 3
+              }
+            },
+            "labels": [
+              "New Student Record"
+            ],
+            "id": "0c98685f-4794-4fed-9fe5-36ca820e9e49",
+            "source": {
+              "cell": "34c33999-6750-43ab-9595-7b8a3186f745",
+              "port": "781a57be-b208-4ae6-bafd-acd61eefcfbf"
+            },
+            "target": {
+              "cell": "2e591819-3e30-466a-a055-329065c65eec",
+              "port": "b031acd5-8a07-41c5-8658-c657ae39f66c"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Profile Query / Profile Record",
+              "description": "View Profile process queries the database for the logged-in student’s record. The database returns the profile data for display",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": true,
+              "isEncrypted": true,
+              "isPublicNetwork": false,
+              "protocol": "TLS/SQL",
+              "threats": [
+                {
+                  "id": "a1a8dcb3-c2eb-4a18-9824-1568f28f91f5",
+                  "title": "R-040",
+                  "status": "Open",
+                  "severity": "Critical",
+                  "type": "Tampering",
+                  "description": "An attacker changes the profile query going to the database, or the profile record coming back to View Profile. Outbound, SQL injection or an altered student ID carried from the request (IDOR) could change the query to read or update another student’s record (as in CVE-2023-34362). Inbound, a man-in-the-middle attack on an unencrypted internal connection could alter the returned profile data before it’s shown to the student. Student records could be corrupted, or false or malicious data shown to users.",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 45,
+                  "score": "25"
+                },
+                {
+                  "id": "24b22364-8335-4502-b5bd-b4d0613beacb",
+                  "title": "R-041",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "The profile record (name, email, student ID, course information) is intercepted or exposed as it passes between the database and View Profile. Examples include sniffing an unencrypted internal connection, queries returning more fields than needed (such as password hashes), injection or IDOR that pulls other students’ records, or verbose query and error logs capturing personal data. This could lead to large-scale exposure of student data, GDPR breach obligations and reputational damage",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 46,
+                  "score": "15"
+                },
+                {
+                  "id": "0386aa53-3595-4774-aee3-cbbf7cd6725f",
+                  "title": "R-042",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Denial of service",
+                  "description": "The connection between View Profile and the database is overloaded or broken, so profile data can’t be retrieved. Examples include request floods exhausting database connections, slow or unindexed profile queries, locking or long-running queries, or network disruption between the tiers. Students would be unable to view their profiles, and the load could hit Login and Registration too, since they share the same database",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 47,
+                  "score": "15"
+                }
+              ],
+              "trustBoundaryIds": [
+                "b6b32228-db8c-4b63-ae38-0e1d55b031a4",
+                "87a9452b-c2fe-48fb-9466-0dea6c927f60"
+              ],
+              "threatFrequency": {
+                "tampering": 3,
+                "informationDisclosure": 4,
+                "denialOfService": 3
+              }
+            },
+            "labels": [
+              "Profile Query / Profile Record"
+            ],
+            "id": "0f42dfbd-affa-4dd2-a868-2c435c865826",
+            "source": {
+              "cell": "5c53c002-6c5a-43b2-86f4-b590831456e9",
+              "port": "781a57be-b208-4ae6-bafd-acd61eefcfbf"
+            },
+            "target": {
+              "cell": "2e591819-3e30-466a-a055-329065c65eec",
+              "port": "b031acd5-8a07-41c5-8658-c657ae39f66c"
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Credentials / Auth Result",
+              "description": "Student sends email/student ID and password to the login process. Login returns the authentication result and, on success, a session token/cookie",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": true,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "TLS/HTTPS",
+              "threats": [
+                {
+                  "id": "7a6b8d54-bf90-41ca-8cf5-7a62413d9dd2",
+                  "title": "R-031",
+                  "status": "Open",
+                  "severity": "Critical",
+                  "type": "Tampering",
+                  "description": "An attacker intercepts and changes data in either direction between the student and the Login process. Outbound, they could change the submitted credentials or inject payloads such as SQL injection in the username. Inbound, they could alter the authentication result or replace the session token, for example to fix the session to one the attacker knows (session fixation) or to turn a failed login into a success on a client that trusts the response. This could lead to unauthorised access or account takeover",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 36,
+                  "score": "25"
+                },
+                {
+                  "id": "f052db86-38f4-4a67-b6e3-db95bb14659e",
+                  "title": "R-032",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "Student credentials going out, or the session token coming back, are intercepted or leaked. This could happen through unencrypted or weakly encrypted connections, TLS flaws such as Heartbleed (CVE-2014-0160), credentials or tokens in URLs, browser history, proxy or server logs, or theft of session cookies by scripts (XSS). The authentication response itself could also reveal whether an account exists. A captured password or session token would give the attacker direct access to the student’s account",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 37,
+                  "score": "15"
+                },
+                {
+                  "id": "93f87713-6056-49f8-97c0-a247b52340da",
+                  "title": "R-033",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Denial of service",
+                  "description": "The flow between students and the Login process is flooded or disrupted so legitimate students can’t log in. Examples include high-volume credential-stuffing or HTTP floods, slow-request attacks (Slowloris), HTTP/2 Rapid Reset (CVE-2023-44487), or attackers deliberately triggering account lockouts for real students. Students would be shut out of the portal, disrupting access to records and coursework deadlines",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 38,
+                  "score": "15"
+                }
+              ],
+              "trustBoundaryIds": [
+                "b6b32228-db8c-4b63-ae38-0e1d55b031a4"
+              ],
+              "threatFrequency": {
+                "tampering": 6,
+                "informationDisclosure": 3,
+                "denialOfService": 3
+              }
+            },
+            "labels": [
+              "Credentials / Auth Result"
+            ],
+            "id": "b640f37d-47f5-41a4-822c-8d41d474f2aa",
+            "source": {
+              "cell": "6dc0558f-d9af-4929-8e94-5d9cb4746fc0",
+              "port": "ada8d4c6-3df9-43b1-9a5b-e5819f4041ed"
+            },
+            "target": {
+              "cell": "133a4b9f-a1e2-4201-9f38-2d9bbc5ac5ba",
+              "port": "336ed374-1c91-4f8c-8bb0-8e1a0a46a50d"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Credential Lookup / User Record",
+              "description": "Login process queries the database for the account matching the submitted identifier. The database returns the stored user record, including the password hash, for verification",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": true,
+              "isEncrypted": true,
+              "isPublicNetwork": false,
+              "protocol": "TLS/SQL",
+              "threats": [
+                {
+                  "id": "c5b08334-6b7d-4c94-8681-95857a137604",
+                  "title": "R-034",
+                  "status": "Open",
+                  "severity": "Critical",
+                  "type": "Tampering",
+                  "description": "An attacker changes the credential lookup query going to the database, or the user record coming back to the Login process. Outbound, SQL injection carried from the login form (e.g. ' OR '1'='1) could change the query to return any user’s record, bypassing authentication. Inbound, a man-in-the-middle attack on an unencrypted internal connection could alter the returned password hash, role or account status, granting access or higher privileges. This could lead to unauthorised logins or account takeover",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 39,
+                  "score": "25"
+                },
+                {
+                  "id": "b163ebda-8d06-495d-80df-b0cb19e44970",
+                  "title": "R-035",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "The returned user record, including the password hash, account status and personal details, is intercepted or exposed as it passes between the database and the Login process. Examples include sniffing an unencrypted internal connection, injection that dumps the whole credentials table, queries that return more fields than needed, or verbose query and error logs capturing records. Exposed password hashes could be cracked offline, leading to account takeover across the portal",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 40,
+                  "score": "15"
+                },
+                {
+                  "id": "03a14617-8c2f-4cbc-a13a-6740ef93b541",
+                  "title": "R-036",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Denial of service",
+                  "description": "The connection between the Login process and the database is overloaded or broken, so credentials can’t be checked and no one can log in. Examples include credential-stuffing floods exhausting database connections, slow or unindexed lookup queries, locking or long-running queries, or network disruption between the tiers. Every login would fail, locking all students out of the portal",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 41,
+                  "score": "15"
+                }
+              ],
+              "trustBoundaryIds": [
+                "b6b32228-db8c-4b63-ae38-0e1d55b031a4",
+                "87a9452b-c2fe-48fb-9466-0dea6c927f60"
+              ],
+              "threatFrequency": {
+                "tampering": 3,
+                "informationDisclosure": 3,
+                "denialOfService": 3
+              }
+            },
+            "labels": [
+              "Credential Lookup / User Record"
+            ],
+            "id": "3bfedb06-3fa6-477d-8b69-722cf10e8e72",
+            "source": {
+              "cell": "133a4b9f-a1e2-4201-9f38-2d9bbc5ac5ba",
+              "port": "781a57be-b208-4ae6-bafd-acd61eefcfbf"
+            },
+            "target": {
+              "cell": "2e591819-3e30-466a-a055-329065c65eec",
+              "port": "b031acd5-8a07-41c5-8658-c657ae39f66c"
+            }
+          }
+        ],
+        "description": "Student Web Portal DFD Diagram"
+      }
+    ],
+    "diagramTop": 1,
+    "reviewer": "Olasunkanmi Ogidan",
+    "threatTop": 47
+  }
+}
