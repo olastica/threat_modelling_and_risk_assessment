@@ -33,10 +33,10 @@ This repository documents a security assessment of a proposed **Student Login Po
 |---|---|---|
 | Model | Created DFD and labeled data flows / boundaries | [`screenshot`](threat-models/screenshot.png), [`model`](threat-models/student_web_portal.json) |
 | Threats | Identified threats using STRIDE | Threat Dragon report in [`report`](threat-models/student_web_portal.pdf) |
-| Risk | Scored each threat and recorded justification | [`risk-assessment/`](risk-assessment/threat_risk_register.xlsx) |
-| Controls | Mapped mitigations to applicable controls | [`control-mapping/`](control-mapping/control-mapping-matrix.xlsx) |
-| Treatment | Assigned proposed actions, owners, and verification criteria | [`risk-treatment/`](risk-treatment/risk_treatment_plan.xlsx) |
-| Annex | [`annex a/`](annex/Annex_A_Risk_Scoring_Methodology.pdf), [`annex b/`](annex/Annex_B_Risk_Treatment_Methodology.pdf) |
+| Risk | Scored each threat and recorded justification | [`risk-assessment`](risk-assessment/threat_risk_register.xlsx) |
+| Controls | Mapped mitigations to applicable controls | [`control-mapping`](control-mapping/control-mapping-matrix.xlsx) |
+| Treatment | Assigned proposed actions, owners, and verification criteria | [`risk-treatment`](risk-treatment/risk_treatment_plan.xlsx) |
+| Annex | [`annex a`](annex/Annex_A_Risk_Scoring_Methodology.pdf), [`annex b`](annex/Annex_B_Risk_Treatment_Methodology.pdf) |
 
 ## Findings summary
 
@@ -47,7 +47,7 @@ This repository documents a security assessment of a proposed **Student Login Po
 | R-005 | Repudiation | A threat actor forges or injects log entries to hide their actions, so activity cannot be traced to an account. | 10 | Mitigate |
 | R-006 | Information Disclosure | A threat actor intercepts traffic or exploits access flaws to read other students' personal data or password hashes. | 15 | Mitigate |
 | R-007 | Denial of Service | A threat actor floods the portal with requests, exhausting server or database resources and blocking legitimate students. | 15 | Mitigate |
-| R-008 | Elevation of Priviledge | An authenticated student or attacker exploits access-control or server flaws to gain administrator or root privileges. | 15 | Mitigate |
+| R-008 | Elevation of Privilege | An authenticated student or attacker exploits access-control or server flaws to gain administrator or root privileges. | 15 | Mitigate |
 
 **Risk scoring:** Likelihood (1–5) × Impact (1–5). Explain both ratings in the risk register. Scores are scenario judgments, not measured exploit probabilities.
 
